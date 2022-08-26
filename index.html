@@ -78,8 +78,14 @@
             <div class="container section-text">
                 <h2>A segunda série mais assistida da Netflix</h2>
 
-                <ul class="gallery-container" id="gallery-image-list" role="gallery">
-                </ul>
+                <div class="gallery-container" role="gallery">
+                    <ul class="gallery-slider" id="gallery-image-list"></ul>
+
+                    <div class="gallery-controls">
+                        <button class="control-prev" id="control-prev"></button>
+                        <button class="control-next" id="control-next"></button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -111,7 +117,7 @@
                         <label for="character">Personagem</label>
                         <textarea name="character" cols="30" rows="10" id="txtCharacter"></textarea>
 
-                        <button type="button" id="btnSubscribe">Me inscrever</button>
+                        <button type="button" id="btn-subscribe">Me inscrever</button>
                     </form>
                 </div>
             </div>

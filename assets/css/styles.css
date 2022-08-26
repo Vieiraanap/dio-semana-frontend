@@ -8,12 +8,15 @@
     --primary-color: #cf0f0f;
     --primary-color-contrast: #ffffff;
     --field-background-color: #000;
+    --left-arrow-src: url("../images/arrows/left-arrow.svg");
+    --right-arrow-src: url("../images/arrows/right-arrow.svg");
 }
 
 /* Temas do Site */
 .light-theme {
     --page-background: linear-gradient(180deg, #ffffff 0%, #ffffff 65%, rgba(255, 255, 255, 0.75) 100%);
     --header-background-color: #e3e3e3;
+    --header-min-height: 850px;
     --highlight-color: #000000;
     --featured-font-family: "Archivo", sans-serif;
     --character-top-image-src: url("../images/characters/kids-on-the-bike.svg");
@@ -27,14 +30,15 @@
 .dark-theme {
     --page-background: linear-gradient(180deg, #050000 0%, #130404 65%, rgba(19, 1, 1, 0.75) 100%);
     --header-background-color: #220f0f;
+    --header-min-height:1050px;
     --highlight-color: #ffffff;
     --featured-font-family: "Rubik Glitch", sans-serif;
     --character-bottom-image-src: url("../images/characters/kids-on-the-bike.svg");
-    --character-bottom-image-color: rgba(255, 255, 255, 0.1);
+    --character-bottom-image-color: #220f0f;
     --character-top-image-src: url("../images/characters/inverted-world-monster.svg");
-    --character-top-image-color: #000;
+    --character-top-image-color: #000000;
     --background-lamp-image: url("../images/backgrounds/lamps-inverted.png");
-    --footer-background-color: #000;
+    --footer-background-color: #cf0f0f;
 }
 
 .dark-theme button,
@@ -52,9 +56,12 @@
 /* Estilos Genéricos */
 
 * {
-    margin: 0;
     box-sizing: border-box;
     transition: 1s; /* tempo de transição entre os temas da página */
+}
+
+body {
+    margin: 0;
 }
 
 h1,
@@ -78,11 +85,11 @@ label {
     font-family: "Libre Baskerville", sans-serif;
 }
 
-button {
+#switch-theme-button,
+#btn-subscribe{
     padding: 16px 32px;
     border: none;
     border-radius: 5px;
-    background-color: transparent;
     font-weight: 900;
     font-family: var(--featured-font-family);
     font-size: 1.25rem;
@@ -137,7 +144,7 @@ textarea:focus-visible {
 
 header {
     background-color: var(--header-background-color);
-    min-height: 850px;
+    min-height: var(--header-min-height);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,13 +184,15 @@ header::before {
 }
 
 .header-content button {
-    border: 3px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 3px solid var(--primary-color-contrast);
+    background-color: var(--primary-color);
+    color: var(--primary-color-contrast); 
 }
 
 .header-content button:hover {
-    background-color: var(--primary-color);
-    color: var(--primary-color-contrast);
+    border: 3px solid var(--primary-color);
+    background-color: var(--primary-color-contrast);
+    color: var(--primary-color);
 }
 
 /* Estilo das div's com imagens dos mundos */
@@ -281,9 +290,45 @@ section {
 }
 
 #section-stranger-things-gallery .gallery-container {
+    width: 76%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+#section-stranger-things-gallery .gallery-slider {
     display: flex;
     gap: 50px;
     padding-left: 20px;
+    position: absolute;
+    width: 200%;
+}
+
+.gallery-controls #control-prev,
+.gallery-controls #control-next {
+    top: 45%;
+    position: absolute;
+    height: 40px;
+    border: 1px solid transparent;
+    background-color: var(--header-background-color);
+    color: var(--primary-color);
+    padding: 0.375rem 0.75rem;
+}
+
+.gallery-controls #control-prev {
+    left: 0px;
+    transform: translate(2%);
+
+    mask: var(--left-arrow-src) bottom / 100% no-repeat;
+    -webkit-mask: var(--left-arrow-src) bottom / 100% no-repeat; /*aplicação ao chrome */
+}
+
+.gallery-controls #control-next {
+    right: 0;
+    transform: translate(-20%);
+
+    mask: var(--right-arrow-src) bottom / 100% no-repeat;
+    -webkit-mask: var(--right-arrow-src) bottom / 100% no-repeat; /*aplicação ao chrome */
 }
 
 #section-stranger-things-gallery .gallery-image {
