@@ -1,7 +1,9 @@
 import { switchTheme } from "./switch-theme.js";
+import { gallery } from "./gallery.js";
 import { inscricaoHellfireClub, getInscricoesHellfireClub } from "./firebase/hellfire-club.js";
 
 const switchThemeButton = document.getElementById('switch-theme-button');
+const galleryImagelist = document.getElementById('gallery-image-list');
 
 const txtName = document.getElementById('txtName');
 const txtEmail = document.getElementById('txtEmail');
@@ -10,13 +12,10 @@ const txtCharacter = document.getElementById('txtCharacter');
 const btnSubscribe = document.getElementById('btnSubscribe');
 
 // mudar tema da página
-switchThemeButton.addEventListener('click', () => {
-    const audio = document.getElementById('music');
-    audio.play();
-    audio.volume = 0.2;
+switchTheme(switchThemeButton);
 
-    switchTheme();
-});
+// exibir galeria
+gallery(galleryImagelist);
 
 // enviar formulário de inscrição
 btnSubscribe.addEventListener('click', async () => {
