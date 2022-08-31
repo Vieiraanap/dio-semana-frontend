@@ -1,5 +1,5 @@
 # dio-semana-frontend
-## Projeto Semana Frontend Mundio Invertido DIO
+## Projeto Semana Frontend Mundo Invertido DIO
 
 Template de Landing Page com tema da série Stranger Things.
 
