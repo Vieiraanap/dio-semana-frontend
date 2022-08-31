@@ -11,10 +11,6 @@ function getImagesList() {
         {
             'img': 'assets/images/content/serie-image-03.png',
             'alt': 'Imagem Eleven assustada'
-        },
-        {
-            'img': 'assets/images/content/serie-image-03.png',
-            'alt': 'Imagem Eleven assustada'
         }
     ]
 }
