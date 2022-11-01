@@ -7,4 +7,6 @@ Template de Landing Page com tema da série Stranger Things.
 
 **Foco:** estruturação semântica e acessibilidade do HTML; pseudo-classes, pseudo-elementos, variáveis locais em CSS, envio de formulário com Javascript e integração com Firebase.
 
+start - npx http-server
+
 ![Semana Front-end DIO](assets/images/banner/logo.svg)
